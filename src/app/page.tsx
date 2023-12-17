@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import Logo from "@/components/ui/logo";
 import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
 
@@ -9,11 +10,7 @@ export default function Home() {
   return (
     <main>
       <nav className="mt-8 ml-12">
-        <div className="w-16 h-16 flex items-center rounded-full justify-center text-white text-5xl font-semibold bg-gradient-to-b hover:bg-gradient-to-r from-[#FDF303] via-[#74D018] to-[#00FAA0] pb-2 cursor-pointer">
-          <p>
-            e
-          </p>
-        </div>
+        <Logo />
       </nav>
 
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center mt-4">
