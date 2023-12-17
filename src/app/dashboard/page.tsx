@@ -3,6 +3,7 @@ import categoriesAtom from '@/atoms/categoriesAtom'
 import CategoryCard from '@/components/category/categoryCard'
 import Navbar from '@/components/category/navbar'
 import axios from 'axios'
+import Link from 'next/link';
 import React, { useEffect } from 'react'
 import { useRecoilState } from 'recoil'
 
@@ -28,8 +29,14 @@ const Dashboard = () => {
     return (<>
         <Navbar />
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10 mx-8 md:mx-20 lg:mx-32' >
-            {categories?.map(category => (<CategoryCard createdAt={category.createdAt} name={category.name} type={category.type} _id={category._id} key={category._id} />))}
-        </div>
+            {categories?.map(category => (
+                <div key={category._id}>
+                    <Link href={`/dashboard/${category._id}`}>
+                        <CategoryCard createdAt={category.createdAt} name={category.name} type={category.type} _id={category._id} key={category._id} />
+                    </Link>
+                </div>
+            ))}
+        </div >
     </>
     )
 }

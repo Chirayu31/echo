@@ -56,10 +56,24 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ name, type, createdAt, _id 
         }
     };
 
+    const getRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    };
+
+    const gradientColor1 = getRandomColor();
+    const gradientColor2 = getRandomColor();
+
     return (
         <Card className='max-w-[350px] border-2 drop-shadow-sm cursor-pointer'>
             <CardHeader className='flex flex-row items-center gap-6'>
-                <div className={` w-10 h-10 bg-[#a7a7a7] rounded-full`}></div>
+                <div style={{
+                    background: `linear-gradient(45deg, ${gradientColor1}, ${gradientColor2})`,
+                }} className={` w-10 h-10 bg-[#a7a7a7] rounded-full`}></div>
                 <CardTitle className="font-bold text-2xl">
                     {trimmedName}
                 </CardTitle>

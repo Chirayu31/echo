@@ -8,6 +8,8 @@ import axios from 'axios';
 import { useSetRecoilState } from 'recoil';
 import categoriesAtom from '@/atoms/categoriesAtom';
 import { useToast } from '../ui/use-toast';
+import Logo from '../ui/logo';
+import Link from 'next/link';
 
 interface Errors {
     categoryTitle?: string;
@@ -67,12 +69,9 @@ const Navbar = () => {
 
     return (
         <nav className="flex items-center gap-16 md:gap-28 mt-6 px-12 border-b-2 pb-4">
-            <div className="w-16 h-16 flex items-center rounded-full justify-center text-white text-5xl font-semibold bg-gradient-to-b hover:bg-gradient-to-r from-[#FDF303] via-[#74D018] to-[#00FAA0] pb-2 cursor-pointer">
-                <p>
-                    e
-                </p>
-            </div>
-
+            <Link href="/">
+                <Logo />
+            </Link>
             <Dialog>
                 <DialogTrigger className='border-2 p-3 font-semibold rounded-xl'>
                     Add Budget Category
