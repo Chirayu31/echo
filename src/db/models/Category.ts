@@ -19,6 +19,6 @@ const categorySchema = new Schema<CategoryDocument>(
     { versionKey: false }
 );
 
-const CategoryModel = models?.Category as mongoose.Model<CategoryDocument> || model<CategoryDocument>('Category', categorySchema);
+const Category = models?.Category as mongoose.Model<CategoryDocument> || model<CategoryDocument>('Category', categorySchema);
 
-export default CategoryModel;
+export default Category;
