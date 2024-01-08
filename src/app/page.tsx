@@ -19,7 +19,7 @@ export default function Home() {
 
       <div className="mt-16 w-full flex items-center flex-col">
         <p className="leading-7 [&:not(:first-child)]:mt-6 max-w-[550px] text-justify	text-lg">
-          Are you ready to take control of your financial future? Meet Echo, your intelligent budgeting companion. Echo utilizes cutting-edge AI technology to revolutionize the way you manage your money, making budgeting simpler, smarter, and more intuitive than ever.
+          Are you ready to take control of your financial future? Meet Echo, your intelligent budgeting companion.
         </p>
         {session && session.user?.email ?
           (
