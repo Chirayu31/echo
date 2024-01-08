@@ -24,7 +24,7 @@ const Dashboard = () => {
             setCategories(await fetchCategories())
         }
         get()
-    }, [])
+    })
 
     return (<>
         <Navbar />
