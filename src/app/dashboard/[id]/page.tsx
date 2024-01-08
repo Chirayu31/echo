@@ -69,14 +69,16 @@ const Transaction = ({ params }: { params: { id: string } }) => {
         }
     };
 
+    async function get() {
+        const data = await fetchCategory()
+        setCategory(data?.category)
+        setTransactions(data?.transactions)
+    }
+
     useEffect(() => {
-        async function get() {
-            const data = await fetchCategory()
-            setCategory(data?.category)
-            setTransactions(data?.transactions)
-        }
         get()
-    })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     if (isLoading) {
         return <div className='scroll-m-20 text-4xl font-extrabold mt-10 text-center tracking-tight lg:text-5xl text-amber-500'>Loading...</div>;

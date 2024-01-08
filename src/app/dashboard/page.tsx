@@ -19,12 +19,14 @@ const Dashboard = () => {
         }
     }
 
+    async function get() {
+        setCategories(await fetchCategories());
+    }
+
     useEffect(() => {
-        async function get() {
-            setCategories(await fetchCategories())
-        }
-        get()
-    })
+        get();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (<>
         <Navbar />
