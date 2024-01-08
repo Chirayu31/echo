@@ -1,9 +1,9 @@
 import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
-import { authOptions } from "../../auth/[...nextauth]/route";
 import db from "@/db/config";
 import User from "@/db/models/User";
 import Category from "@/db/models/Category";
+import { authOptions } from "../../auth/[...nextauth]/authOptions";
 
 export async function getCategories(req: NextRequest) {
     try {
